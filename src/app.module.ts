@@ -11,7 +11,7 @@ import { StudentModule } from './student/student.module';
     ConfigModule.forRoot(
       { isGlobal: true }
     ),
-    MongooseModule.forRoot(process.env.MONGO_URI!),
+    MongooseModule.forRoot("mongodb+srv://mabbas786official_db_user:v847J09yLkEkOQlg@khan.rsgmlgd.mongodb.net/?appName=khan"),
   ],
   controllers: [AppController],
   providers: [AppService],

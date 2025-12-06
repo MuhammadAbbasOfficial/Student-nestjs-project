@@ -3,6 +3,7 @@ import { Student } from './student.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateStudentDto } from './dto/create-student-dto';
+import { UpdateStudentDto } from './dto/update-student-dto';
 
 
 @Injectable()
@@ -45,8 +46,8 @@ export class StudentService {
         return { deleted : true };
     }
 
-    async updateStudentById(id : string, updateData : Partial<Student>) 
-    : Promise<Student>{
+    async updateStudentById(id : string, updateData : Partial<UpdateStudentDto>) 
+    : Promise<UpdateStudentDto>{
         const updatedStudent = 
         await this.studentModel
         .findByIdAndUpdate(id, updateData, { new : true}).exec();
